@@ -26,10 +26,10 @@ const Aform = ({ productName, questionId, questionBody }) => {
 
   const postAnswer = () => {
     axios
-      .post(`http://3.134.102.30/qa/${questionId}/answers`, {
+      .post(`https://3.134.102.30/qa/${questionId}/answers`, {
         body: answerInput,
         name: nicknameInput,
-        email: emailInput,
+        email: emailInput
       })
       .then(res => console.log(res))
       .then(res => setModalIsOpen(false))
@@ -46,46 +46,46 @@ const Aform = ({ productName, questionId, questionBody }) => {
         open={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
       >
-        <Header size='large' textAlign='left'>
+        <Header size="large" textAlign="left">
           Submit an Answer
         </Header>
-        <Header size='medium' textAlign='left'>
+        <Header size="medium" textAlign="left">
           {productName} : {questionBody}
         </Header>
         <Modal.Content>
           <Form>
             <Form.TextArea
-              label='Your Answer'
-              name='answerInput'
-              type='text'
+              label="Your Answer"
+              name="answerInput"
+              type="text"
               required={true}
               value={answerInput}
-              maxLength='1000'
+              maxLength="1000"
               onChange={e => setAnswerInput(e.target.value)}
               placeholder={`answer ${questionBody} here`}
               error={
                 answerInputError
                   ? {
                       content: 'Please submit an answer',
-                      pointing: 'below',
+                      pointing: 'below'
                     }
                   : false
               }
             />
             <Form.Input
-              type='text'
-              label='Nickname'
+              type="text"
+              label="Nickname"
               required={true}
-              maxLength='60'
-              placeholder='Example: jack543!'
-              name='nicknameInput'
+              maxLength="60"
+              placeholder="Example: jack543!"
+              name="nicknameInput"
               value={nicknameInput}
               onChange={e => setNicknameInput(e.target.value)}
               error={
                 nicknameInputError
                   ? {
                       content: 'Please enter a nickname',
-                      pointing: 'below',
+                      pointing: 'below'
                     }
                   : false
               }
@@ -95,11 +95,11 @@ const Aform = ({ productName, questionId, questionBody }) => {
             </small>
             <br />
             <Form.Input
-              label='Email'
-              type='email'
-              maxLength='60'
-              placeholder='Example: jack@email.com'
-              name='emailInput'
+              label="Email"
+              type="email"
+              maxLength="60"
+              placeholder="Example: jack@email.com"
+              name="emailInput"
               value={emailInput}
               onChange={e => setEmailInput(e.target.value)}
               required={true}
@@ -107,7 +107,7 @@ const Aform = ({ productName, questionId, questionBody }) => {
                 emailInputError
                   ? {
                       content: 'Please enter a valid email address',
-                      pointing: 'below',
+                      pointing: 'below'
                     }
                   : false
               }
@@ -117,10 +117,10 @@ const Aform = ({ productName, questionId, questionBody }) => {
         </Modal.Content>
         <Modal.Actions>
           <Button
-            type='submit'
+            type="submit"
             basic
-            color='olive'
-            content='Submit Answer'
+            color="olive"
+            content="Submit Answer"
             onClick={e => handleSubmit(e)}
           />
         </Modal.Actions>

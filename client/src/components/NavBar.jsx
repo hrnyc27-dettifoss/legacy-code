@@ -21,14 +21,16 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="search-bar">
-        <input
-          className="search-text"
-          type="text"
-          onChange={e => {
-            setsearchVal(e.target.value);
-          }}
-          onKeyPress={keyChange}
-        ></input>
+        <label>
+          <input
+            className="search-text"
+            type="text"
+            onChange={e => {
+              setsearchVal(e.target.value);
+            }}
+            onKeyPress={keyChange}
+          ></input>
+        </label>
         <div className="fa fa-search search-button" onClick={clickChange}></div>
       </li>
     </ul>

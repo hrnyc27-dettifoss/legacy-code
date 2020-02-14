@@ -26,10 +26,10 @@ const Qform = ({ productName, id, refreshList }) => {
 
   const postQuestion = () => {
     axios
-      .post(`http://3.134.102.30/qa/${id}`, {
+      .post(`https://3.134.102.30/qa/${id}`, {
         body: questionInput,
         name: nicknameInput,
-        email: emailInput,
+        email: emailInput
       })
       .then(res => refreshList())
       .then(res => setModalIsOpen(false))
@@ -46,43 +46,43 @@ const Qform = ({ productName, id, refreshList }) => {
         open={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
       >
-        <Header size='large' textAlign='left'>
+        <Header size="large" textAlign="left">
           Ask Your Question
         </Header>
         <Modal.Content>
           <Form>
             <Form.TextArea
-              label='Your Question'
-              name='questionInput'
-              type='text'
+              label="Your Question"
+              name="questionInput"
+              type="text"
               required={true}
               value={questionInput}
-              maxLength='1000'
+              maxLength="1000"
               onChange={e => setQuestionInput(e.target.value)}
               placeholder={`about the ${productName}...`}
               error={
                 questionInputError
                   ? {
                       content: 'Please enter a question',
-                      pointing: 'below',
+                      pointing: 'below'
                     }
                   : false
               }
             />
             <Form.Input
-              type='text'
-              label='Nickname'
+              type="text"
+              label="Nickname"
               required={true}
-              maxLength='60'
-              placeholder='Example: jackson11!'
-              name='nicknameInput'
+              maxLength="60"
+              placeholder="Example: jackson11!"
+              name="nicknameInput"
               value={nicknameInput}
               onChange={e => setNicknameInput(e.target.value)}
               error={
                 nicknameInputError
                   ? {
                       content: 'Please enter a nickname',
-                      pointing: 'below',
+                      pointing: 'below'
                     }
                   : false
               }
@@ -92,11 +92,11 @@ const Qform = ({ productName, id, refreshList }) => {
             </small>
             <br />
             <Form.Input
-              label='Email'
-              type='email'
-              maxLength='60'
-              placeholder='Example: jackson11@gmail.com'
-              name='emailInput'
+              label="Email"
+              type="email"
+              maxLength="60"
+              placeholder="Example: jackson11@gmail.com"
+              name="emailInput"
               value={emailInput}
               onChange={e => setEmailInput(e.target.value)}
               required={true}
@@ -104,7 +104,7 @@ const Qform = ({ productName, id, refreshList }) => {
                 emailInputError
                   ? {
                       content: 'Please enter a valid email address',
-                      pointing: 'below',
+                      pointing: 'below'
                     }
                   : false
               }
@@ -114,10 +114,10 @@ const Qform = ({ productName, id, refreshList }) => {
         </Modal.Content>
         <Modal.Actions>
           <Button
-            type='submit'
+            type="submit"
             basic
-            color='olive'
-            content='Submit Question'
+            color="olive"
+            content="Submit Question"
             onClick={e => handleSubmit(e)}
           />
         </Modal.Actions>

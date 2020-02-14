@@ -9,7 +9,7 @@ const AList = ({ question }) => {
   const getAnswers = () => {
     axios
       .get(
-        `http://3.134.102.30/qa/${
+        `https://3.134.102.30/qa/${
           question.question_id
         }/answers?page=${1}&count=${100}`
       )
@@ -86,7 +86,7 @@ const AList = ({ question }) => {
         <div
           style={{
             maxHeight: '35vh',
-            overflow: 'auto',
+            overflow: 'auto'
           }}
         >
           <b>A: </b>

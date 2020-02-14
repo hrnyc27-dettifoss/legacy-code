@@ -19,7 +19,7 @@ const QuestionsAnswers = () => {
 
   const getQList = () => {
     axios
-      .get(`http://3.134.102.30/qa/${id}?page=${1}&count=${100}`)
+      .get(`https://3.134.102.30/qa/${id}?page=${1}&count=${100}`)
       .then(res => {
         setQuestionList(res.data.results);
       })
@@ -28,7 +28,7 @@ const QuestionsAnswers = () => {
 
   const getProductName = () => {
     axios
-      .get(`http://3.134.102.30/products/${id}`)
+      .get(`https://3.134.102.30/products/${id}`)
       .then(res => {
         setProductName(res.data.name);
       })
@@ -45,7 +45,7 @@ const QuestionsAnswers = () => {
   }, [url]);
 
   return (
-    <div className='questions-answers'>
+    <div className="questions-answers">
       <p>Questions and Answers</p>
       <br />
       <SearchQuestions qList={questionList} onSearch={handleSearch} />

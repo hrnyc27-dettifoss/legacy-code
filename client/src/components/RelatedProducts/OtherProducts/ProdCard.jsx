@@ -16,7 +16,7 @@ const ProdCard = ({ product, style, globalProdInfo, removeProduct, type }) => {
   const [showThumbnails, setshowThumbnails] = useState(false);
   useEffect(() => {
     axios
-      .get(`http://3.134.102.30/reviews/${product.id}/meta`)
+      .get(`https://3.134.102.30/reviews/${product.id}/meta`)
       .then(({ data }) => {
         let totalQuantity = 0;
         let ratingSum = 0;

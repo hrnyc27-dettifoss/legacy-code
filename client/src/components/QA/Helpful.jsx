@@ -8,10 +8,10 @@ const Helpful = props => {
 
   if (props.answer) {
     helpfulness = props.answer.helpfulness;
-    route = `http://3.134.102.30/qa/answer/${props.answer.answer_id}/helpful`;
+    route = `https://3.134.102.30/qa/answer/${props.answer.answer_id}/helpful`;
   } else {
     helpfulness = props.question.question_helpfulness;
-    route = `http://3.134.102.30/qa/question/${props.question.question_id}/helpful`;
+    route = `https://3.134.102.30/qa/question/${props.question.question_id}/helpful`;
   }
 
   const handleYesClick = () => {

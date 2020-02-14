@@ -29,9 +29,9 @@ const Overview = ({ avg, total, setGlobalProdInfo, setGlobalStyleInfo }) => {
     seturl(id);
   }
   useEffect(() => {
-    const productPromise = axios.get(`http://3.134.102.30/products/${url}`);
+    const productPromise = axios.get(`https://3.134.102.30/products/${url}`);
     const stylePromise = axios.get(
-      `http://3.134.102.30/products/${url}/styles`
+      `https://3.134.102.30/products/${url}/styles`
     );
 
     Promise.all([productPromise, stylePromise]).then(results => {
@@ -55,14 +55,14 @@ const Overview = ({ avg, total, setGlobalProdInfo, setGlobalStyleInfo }) => {
   }, [url]);
   // useEffect(() => {
   //   axios
-  //     .get(`http://3.134.102.30/products/${url}`)
+  //     .get(`https://3.134.102.30/products/${url}`)
   //     .then(results => {
   //       setProductInfo(results.data);
   //       setGlobalProdInfo(results.data);
   //     })
   //     .then(() => {
   //       axios
-  //         .get(`http://3.134.102.30/products/${url}/styles`)
+  //         .get(`https://3.134.102.30/products/${url}/styles`)
   //         .then(results => {
   //           let styles = results.data.results;
   //           let emptyStyle = true;

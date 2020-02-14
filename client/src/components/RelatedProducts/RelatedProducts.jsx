@@ -16,7 +16,7 @@ const RelatedProducts = ({ globalProdInfo, globalStyleInfo }) => {
   }
 
   useEffect(() => {
-    axios.get(`http://3.134.102.30/products/${url}/related`).then(results => {
+    axios.get(`https://3.134.102.30/products/${url}/related`).then(results => {
       let noDuplicateProducts = new Set(
         results.data.filter(prod => {
           return prod !== Number(id);
@@ -25,14 +25,16 @@ const RelatedProducts = ({ globalProdInfo, globalStyleInfo }) => {
       // Get all the product information for each related product
       const prodPromises = [];
       noDuplicateProducts.forEach(product => {
-        prodPromises.push(axios.get(`http://3.134.102.30/products/${product}`));
+        prodPromises.push(
+          axios.get(`https://3.134.102.30/products/${product}`)
+        );
       });
 
       // Get all the style information for each related product
       const stylePromises = [];
       noDuplicateProducts.forEach(product => {
         stylePromises.push(
-          axios.get(`http://3.134.102.30/products/${product}/styles`)
+          axios.get(`https://3.134.102.30/products/${product}/styles`)
         );
       });
 

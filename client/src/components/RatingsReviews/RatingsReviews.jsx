@@ -100,7 +100,7 @@ const RatingsReviews = props => {
   }
 
   useEffect(() => {
-    axios.get(`http://3.134.102.30/reviews/${url}/meta`).then(({ data }) => {
+    axios.get(`https://3.134.102.30/reviews/${url}/meta`).then(({ data }) => {
       setMeta(data);
 
       let totalQuantity = 0;
@@ -120,7 +120,7 @@ const RatingsReviews = props => {
 
       axios
         .get(
-          `http://3.134.102.30/reviews/${url}/list?page=1&count=${totalQuantity}&sort=${sortParameter}`
+          `https://3.134.102.30/reviews/${url}/list?page=1&count=${totalQuantity}&sort=${sortParameter}`
         )
         .then(({ data }) => {
           props.setAppTotal(data.results.length);
@@ -132,7 +132,7 @@ const RatingsReviews = props => {
   useEffect(() => {
     axios
       .get(
-        `http://3.134.102.30/reviews/${url}/list?page=1&count=${props.totalReviews}&sort=${sortParameter}`
+        `https://3.134.102.30/reviews/${url}/list?page=1&count=${props.totalReviews}&sort=${sortParameter}`
       )
       .then(({ data }) => {
         props.setAppTotal(data.results.length);
